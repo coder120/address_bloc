@@ -9,6 +9,18 @@ require_relative '../models/address_book'
      expect(entry.email).to eq expected_email
  end
  
+ context "#kill" do
+ it "should delete all entries" do
+ book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
+ book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
+ book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
+ 
+ book.kill
+ expect(book.entries.size).to eq(0)
+end
+end
+ 
+ 
    describe "attributes" do
      it "responds to entries" do
        expect(book).to respond_to(:entries)

@@ -8,6 +8,11 @@ require "csv"
        @entries = []
      end
 
+  def kill 
+      @entries = []
+      
+  end
+   
   def remove_entry(name, phone_number, email)
       remove = nil
       @entries.each do |entry|

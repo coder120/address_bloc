@@ -14,7 +14,7 @@ require_relative '../models/address_book'
      puts "2 - Create an entry"
      puts "3 - Search for an entry"
      puts "4 - Import entries from a CSV"
-     puts "5 - View entry by number"
+     puts "5 - Kill all entries"
      puts "6 - Exit"
      print "Enter your selection: "
  
@@ -41,7 +41,8 @@ require_relative '../models/address_book'
          main_menu
        when 5
          system "clear"
-         entry_by_number
+         @add_book.kill
+         puts "all entries deleted!"
          main_menu
          
        when 6
@@ -133,6 +134,7 @@ require_relative '../models/address_book'
          edit_entry(entry)
          system "clear"
          main_menu
+       
        when "m"
          system "clear"
          main_menu
@@ -179,6 +181,7 @@ require_relative '../models/address_book'
      puts "d - delete entry"
      puts "e - edit this entry"
      puts "m - return to main menu"
+     
  
      # #17
      selection = gets.chomp
